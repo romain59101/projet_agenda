@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Agenda {
@@ -16,6 +17,9 @@ public class Agenda {
 	
 	
 	public Calendar dateDebut;
+	
+	@ManyToOne(mappedBy="agenda")
+	public Rdv rdv;
 	
 	public Long getId() {
 		return id;
