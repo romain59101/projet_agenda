@@ -38,7 +38,7 @@ public class Client {
 	
 	@OneToMany(mappedBy="client")
 	@JsonIgnore
-	private Set<Rdv> rdvs = new HashSet<Rdv>();
+	private Set<Rdv> rdvs = new HashSet<Rdv>(); 
 	
 	Client() {}
 
