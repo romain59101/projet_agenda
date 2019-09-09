@@ -20,7 +20,7 @@ public class Client {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long id;
 	
-	public String societe;
+	public String society;
 	
 
 	@OneToOne(cascade=CascadeType.ALL)
