@@ -24,7 +24,7 @@ public class Contact {
 		@JsonIgnore
 		private Client client;
 
-		Contact() {}
+		public Contact() {}
 
 		public Long getId() {
 			return id;

@@ -40,7 +40,7 @@ public class Client {
 	@JsonIgnore
 	private Set<Rdv> rdvs = new HashSet<Rdv>();
 	
-	Client() {}
+	public Client() {}
 
 	
 	

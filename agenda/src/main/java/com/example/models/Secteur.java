@@ -25,7 +25,7 @@ public class Secteur {
 	@JsonIgnore
 	private Set<Client> clients = new HashSet<Client>();
 
-	Secteur() {}
+	public Secteur() {}
 	
 	
 

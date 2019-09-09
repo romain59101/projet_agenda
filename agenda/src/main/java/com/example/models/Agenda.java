@@ -18,7 +18,7 @@ public class Agenda {
 	
 	public Calendar dateDebut;
 	
-	@ManyToOne(mappedBy="agenda")
+	@ManyToOne
 	public Rdv rdv;
 	
 	public Long getId() {
