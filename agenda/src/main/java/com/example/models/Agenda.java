@@ -2,10 +2,13 @@ package com.example.models;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -18,7 +21,8 @@ public class Agenda {
 	
 	public Calendar dateDebut;
 	
-	@ManyToOne(mappedBy="agenda")
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="id_rdv")
 	public Rdv rdv;
 	
 	public Long getId() {

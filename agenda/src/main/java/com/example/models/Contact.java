@@ -24,7 +24,16 @@ public class Contact {
 		@JsonIgnore
 		private Client client;
 
-		Contact() {}
+		public Contact() {}
+		
+		public Contact(Long id, String prenom, String nom, String email, Client client) {
+			super();
+			this.id = id;
+			this.prenom = prenom;
+			this.nom = nom;
+			this.email = email;
+			this.client = client;
+		}
 
 		public Long getId() {
 			return id;

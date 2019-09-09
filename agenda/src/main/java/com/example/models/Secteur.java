@@ -25,9 +25,15 @@ public class Secteur {
 	@JsonIgnore
 	private Set<Client> clients = new HashSet<Client>();
 
-	Secteur() {}
+	public Secteur() {}
 	
-	
+
+	public Secteur(Long id, String nom, Set<Client> clients) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.clients = clients;
+	}
 
 	public Long getId() {
 		return id;

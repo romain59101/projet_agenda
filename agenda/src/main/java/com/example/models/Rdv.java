@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,17 +22,17 @@ public class Rdv {
 	
 	private String nom;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn (name= "id_user")
 	private Utilisateur utilisateur;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn (name= "id_client")
 	private Client client;
 	
-//	@OneToOne
-//	@JoinColumn (name = "id_rdv")
-//	private Agenda agenda;
+	@OneToMany(mappedBy="rdv")
+	@JoinColumn (name = "id_agenda")
+	private Agenda agenda;
 	
 	@OneToOne
 	@JoinColumn (name="id_categorie")
@@ -40,15 +42,13 @@ public class Rdv {
 	public Rdv() {}
 
 
-	
-
-
-	public Rdv(Long id, String nom, Utilisateur utilisateur, Client client, CategorieRdv categorie) {
+	public Rdv(Long id, String nom, Utilisateur utilisateur, Client client, Agenda agenda, CategorieRdv categorie) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.utilisateur = utilisateur;
 		this.client = client;
+		this.agenda = agenda;
 		this.categorie = categorie;
 	}
 
@@ -93,14 +93,14 @@ public class Rdv {
 	}
 
 
-//	public Agenda getAgenda() {
-//		return agenda;
-//	}
-//
-//
-//	public void setAgenda(Agenda agenda) {
-//		this.agenda = agenda;
-//	}
+	public Agenda getAgenda() {
+		return agenda;
+	}
+
+
+	public void setAgenda(Agenda agenda) {
+		this.agenda = agenda;
+	}
 
 
 	public CategorieRdv getCategorie() {
