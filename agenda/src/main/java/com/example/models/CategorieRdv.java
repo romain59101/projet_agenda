@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table( name = "categorieRdv")
-public class CategorieRDV {
+public class CategorieRdv {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -28,9 +28,9 @@ public class CategorieRDV {
 	@OneToMany(mappedBy= "Category", fetch= FetchType.LAZY )
 	private List<Rdv> Rdv = new LinkedList<Rdv>();
 	
-	public CategorieRDV () {}
+	public CategorieRdv () {}
 
-	public CategorieRDV(Long id, String name, List<com.example.models.Rdv> rdv) {
+	public CategorieRdv(Long id, String name, List<com.example.models.Rdv> rdv) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import ch.qos.logback.core.net.server.Client;
-
 @Entity
 @Table( name= "rdv")
 public class Rdv {
@@ -30,25 +28,27 @@ public class Rdv {
 	@JoinColumn (name= "id_client")
 	private Client client;
 	
-	@OneToOne
-	@JoinColumn (name = "id_rdv")
-	private Agenda agenda;
+//	@OneToOne
+//	@JoinColumn (name = "id_rdv")
+//	private Agenda agenda;
 	
 	@OneToOne
-	@JoinColumn (name="id.categorie")
-	private CategorieRDV categorie;
+	@JoinColumn (name="id_categorie")
+	private CategorieRdv categorie;
 	
 	
 	public Rdv() {}
 
 
-	public Rdv(Long id, String nom, Utilisateur utilisateur, Client client, Agenda agenda, CategorieRDV categorie) {
+	
+
+
+	public Rdv(Long id, String nom, Utilisateur utilisateur, Client client, CategorieRdv categorie) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.utilisateur = utilisateur;
 		this.client = client;
-		this.agenda = agenda;
 		this.categorie = categorie;
 	}
 
@@ -93,22 +93,22 @@ public class Rdv {
 	}
 
 
-	public Agenda getAgenda() {
-		return agenda;
-	}
+//	public Agenda getAgenda() {
+//		return agenda;
+//	}
+//
+//
+//	public void setAgenda(Agenda agenda) {
+//		this.agenda = agenda;
+//	}
 
 
-	public void setAgenda(Agenda agenda) {
-		this.agenda = agenda;
-	}
-
-
-	public CategorieRDV getCategorie() {
+	public CategorieRdv getCategorie() {
 		return categorie;
 	}
 
 
-	public void setCategorie(CategorieRDV categorie) {
+	public void setCategorie(CategorieRdv categorie) {
 		this.categorie = categorie;
 	}
 	
