@@ -30,6 +30,10 @@ public class Client {
 	@JoinColumn(name="secteur")
 	private Secteur secteur;
 	
+	@OneToMany(mappedBy="client")
+	@JsonIgnore
+	private Set<Rdv> rdvs = new HashSet<Rdv>();
+	
 	Client() {}
 
 	
